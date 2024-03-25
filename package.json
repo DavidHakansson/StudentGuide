@@ -1,0 +1,24 @@
+{
+  "name": "studentguide",
+  "version": "1.0.0",
+  "description": "Project work for Agile Development course at Uppsala University",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidHakansson/studentguide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidHakansson/studentguide/issues"
+  },
+  "homepage": "https://github.com/davidHakansson/studentguide#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "pg": "^8.11.3"
+  }
+}
