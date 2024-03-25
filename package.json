@@ -4,7 +4,9 @@
   "description": "Project work for Agile Development course at Uppsala University",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i --production=false",
+    "render-build":"npm install && npm run build"
   },
   "repository": {
     "type": "git",
