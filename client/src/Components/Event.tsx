@@ -1,6 +1,24 @@
+
 import React, { Component } from 'react';
 import '../Styling/Event.css'; 
-class Event extends Component {
+
+// Define the types for the event object
+interface EventInfo {
+    id: string;
+    title: string;
+    date: string;
+    time: string;
+    category: string;
+    nation: string;
+    imageUrl: string;
+}
+
+// Define the type for the component's props
+interface EventProps {
+    event: EventInfo;
+}
+
+class Event extends Component<EventProps> {
     render() {
         const { id, title, date, time, category, nation, imageUrl } = this.props.event;
         return (
@@ -9,7 +27,7 @@ class Event extends Component {
                 <div className="card-body text-center">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
-                    <p className="card-text">{category} - {nation}</p>
+                    <p className="card-text">{nation} nation</p>
                     <a href={`/event/${id}`} className="btn btn-primary">Learn More</a>
                 </div>
             </div>
@@ -18,4 +36,3 @@ class Event extends Component {
 }
 
 export default Event;
-
