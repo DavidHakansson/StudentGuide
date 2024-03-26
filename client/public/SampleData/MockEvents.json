@@ -2,7 +2,7 @@
     {
       "id": "1",
       "title": "Tisdags Klobb",
-      "date": "2024-04-30",
+      "date": "2024-03-26",
       "time": "20:00",
       "category": "Nightclub",
       "nation": "Snerikes",
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "title": "Bakfickan Pub",
-      "date": "2024-04-30",
+      "date": "2024-03-26",
       "time": "18:00",
       "category": "Pub",
       "nation": "Stockholms",
@@ -22,7 +22,7 @@
     {
       "id": "3",
       "title": "Norrlands Cafe",
-      "date": "2024-05-01",
+      "date": "2024-03-26",
       "time": "15:00",
       "category": "Cafe",
       "nation": "Norrlands",
@@ -32,7 +32,7 @@
     {
       "id": "4",
       "title": "Gasque at V-Dala",
-      "date": "2024-05-02",
+      "date": "2024-03-26",
       "time": "19:00",
       "category": "Dinner Party",
       "nation": "V-Dala",
@@ -42,7 +42,7 @@
     {
       "id": "5",
       "title": "Jazzkväll",
-      "date": "2024-05-03",
+      "date": "22024-03-27",
       "time": "20:00",
       "category": "Live Music",
       "nation": "Uplands",
@@ -52,7 +52,7 @@
     {
       "id": "6",
       "title": "Quiz Night",
-      "date": "2024-05-04",
+      "date": "2024-03-27",
       "time": "18:00",
       "category": "Quiz",
       "nation": "Gästrike-Hälsinge",
@@ -62,7 +62,7 @@
     {
       "id": "7",
       "title": "Lunch at Gotlands",
-      "date": "2024-05-05",
+      "date": "2024-03-27",
       "time": "12:00",
       "category": "Lunch",
       "nation": "Gotlands",
@@ -72,7 +72,7 @@
     {
       "id": "8",
       "title": "Outdoor Cinema",
-      "date": "2024-05-06",
+      "date": "2024-03-27",
       "time": "21:00",
       "category": "Movie",
       "nation": "Kalmar",
@@ -82,7 +82,7 @@
     {
       "id": "9",
       "title": "Göteborgs Rock Night",
-      "date": "2024-04-30",
+      "date": "2024-03-26",
       "time": "21:00",
       "category": "Nightclub",
       "nation": "Göteborgs",
@@ -92,7 +92,7 @@
     {
       "id": "10",
       "title": "Östgöta Karaoke Evening",
-      "date": "2024-04-30",
+      "date": "2024-03-26",
       "time": "19:00",
       "category": "Pub",
       "nation": "Östgöta",
@@ -102,7 +102,7 @@
     {
       "id": "11",
       "title": "Wermlands Indie Night",
-      "date": "2024-04-30",
+      "date": "2024-03-27",
       "time": "20:00",
       "category": "Nightclub",
       "nation": "Wermlands",
@@ -112,7 +112,7 @@
     {
       "id": "12",
       "title": "Smålands Vegan Pub",
-      "date": "2024-04-30",
+      "date": "2024-03-26",
       "time": "18:00",
       "category": "Pub",
       "nation": "Smålands",

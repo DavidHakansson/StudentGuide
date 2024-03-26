@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import EventsByDate from './Components/EventsByDate'; // Adjust the import path as needed
+import DatePicker from './Components/DatePicker'; // Import the new DatePicker component
 
 class App extends Component {
   state = {
-    events: []
+    events: [],
+    selectedDate: '2024-04-30', // Default or initial date
   };
 
   componentDidMount() {
@@ -22,14 +24,18 @@ class App extends Component {
         console.error('Error during fetch:', error);
       });
   }
-  
+
+  handleDateChange = (date) => {
+    this.setState({ selectedDate: date });
+  }
 
   render() {
-    const { events } = this.state;
-    const specificDate = '2024-04-30';
+    const { events, selectedDate } = this.state;
+
     return (
       <div>
-        <EventsByDate events={events} date={specificDate} />
+        <DatePicker onChange={this.handleDateChange} />
+        <EventsByDate events={events} date={selectedDate} />
       </div>
     );
   }

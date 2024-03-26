@@ -1,0 +1,44 @@
+/* DatePicker.css */
+.date-picker-container {
+    margin: 20px;
+    text-align: center;
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .date-picker-container label {
+    margin-right: 10px;
+    color: #495057; /* Dark grey color for text */
+    font-weight: 500;
+  }
+  
+  .date-picker-container input[type="date"] {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+  }
+  
+  .date-picker-container input[type="date"]:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .date-picker-container button {
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Subtle rounding on the edges */
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+  }
+  
+  .date-picker-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  
