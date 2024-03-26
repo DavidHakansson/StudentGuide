@@ -1,0 +1,123 @@
+[
+    {
+      "id": "1",
+      "title": "Tisdags Klobb",
+      "date": "2024-04-30",
+      "time": "20:00",
+      "category": "Nightclub",
+      "nation": "Snerikes",
+      "description": "Dance the night away at Snerikes.",
+      "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsnerikes.se%2Fwp%2Fwp-content%2Fuploads%2F1483501_10153575826660058_1275842168_n-705x468.jpg&f=1&nofb=1&ipt=ea48733839a6f1ae788819fd41adb95577b6add52c0412dc3a6e0f11eeb52bfa&ipo=images"
+    },
+    {
+      "id": "2",
+      "title": "Bakfickan Pub",
+      "date": "2024-04-30",
+      "time": "18:00",
+      "category": "Pub",
+      "nation": "Stockholms",
+      "description": "Cozy up with friends for a relaxed evening at Stockholms nation.",
+      "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fuppsalastudent.com%2Fwordpress%2Fuploads%2F2017%2F11%2FStockholm.png&f=1&nofb=1&ipt=d9dcec05f8a7665b210e9335c0e6150ac064bc991708a93ff0cca29fcdd35c94&ipo=images"
+    },
+    {
+      "id": "3",
+      "title": "Norrlands Cafe",
+      "date": "2024-05-01",
+      "time": "15:00",
+      "category": "Cafe",
+      "nation": "Norrlands",
+      "description": "Enjoy a traditional Swedish fika at Norrlands nation.",
+      "imageUrl": "https://example.com/image3.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Gasque at V-Dala",
+      "date": "2024-05-02",
+      "time": "19:00",
+      "category": "Dinner Party",
+      "nation": "V-Dala",
+      "description": "Experience a traditional student dinner at V-Dala nation.",
+      "imageUrl": "https://example.com/image4.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Jazzkväll",
+      "date": "2024-05-03",
+      "time": "20:00",
+      "category": "Live Music",
+      "nation": "Uplands",
+      "description": "Enjoy an evening of live jazz music at Uplands nation.",
+      "imageUrl": "https://example.com/image5.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Quiz Night",
+      "date": "2024-05-04",
+      "time": "18:00",
+      "category": "Quiz",
+      "nation": "Gästrike-Hälsinge",
+      "description": "Test your knowledge at Gästrike-Hälsinge nation's quiz night.",
+      "imageUrl": "https://example.com/image6.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Lunch at Gotlands",
+      "date": "2024-05-05",
+      "time": "12:00",
+      "category": "Lunch",
+      "nation": "Gotlands",
+      "description": "Enjoy a delicious lunch at Gotlands nation.",
+      "imageUrl": "https://example.com/image7.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Outdoor Cinema",
+      "date": "2024-05-06",
+      "time": "21:00",
+      "category": "Movie",
+      "nation": "Kalmar",
+      "description": "Watch a classic movie under the stars at Kalmar nation.",
+      "imageUrl": "https://example.com/image8.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Göteborgs Rock Night",
+      "date": "2024-04-30",
+      "time": "21:00",
+      "category": "Nightclub",
+      "nation": "Göteborgs",
+      "description": "Rock out at Göteborgs nation's vibrant rock-themed nightclub event.",
+      "imageUrl": "https://example.com/image9.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Östgöta Karaoke Evening",
+      "date": "2024-04-30",
+      "time": "19:00",
+      "category": "Pub",
+      "nation": "Östgöta",
+      "description": "Sing your heart out at the karaoke evening at Östgöta nation.",
+      "imageUrl": "https://example.com/image10.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Wermlands Indie Night",
+      "date": "2024-04-30",
+      "time": "20:00",
+      "category": "Nightclub",
+      "nation": "Wermlands",
+      "description": "Discover indie music gems at Wermlands nation's indie music night.",
+      "imageUrl": "https://example.com/image11.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Smålands Vegan Pub",
+      "date": "2024-04-30",
+      "time": "18:00",
+      "category": "Pub",
+      "nation": "Smålands",
+      "description": "Enjoy a variety of vegan treats at Smålands nation's special vegan pub night.",
+      "imageUrl": "https://example.com/image12.jpg"
+    }
+  ]
+  
