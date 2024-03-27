@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import Event from './Event'; // Import the Event component
+import { EventObject } from './Types'; 
 
-interface EventObject {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  category: string;
-  nation: string;
-  imageUrl: string;
-}
 
 interface Props {
   events: EventObject[];
@@ -23,7 +15,10 @@ class EventsByDate extends Component<Props> {
       (acc[event.category] = acc[event.category] || []).push(event);
       return acc;
     }, {});
+  
+  
   }
+
 
   // Function to sort events by time within each category
   sortEventsByTime(events: EventObject[]) {
