@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EventsByDate from './Components/EventsByDate'; // Adjust the import path as needed
 import DatePicker from './Components/DatePicker'; // Import the new DatePicker component
 import CategoryDropDown from './Components/CategoryDropDown';
+import Header from './Components/Header'; //importerar headern
 
 class App extends Component {
   state = {
@@ -39,6 +40,7 @@ class App extends Component {
 
     return (
       <div>
+        <Header></Header>
         <DatePicker onChange={this.handleDateChange} />
         <CategoryDropDown onChange={this.handleCategoryChange}/>
         <EventsByDate categories={selectedCategories} events={events} date={selectedDate} />
