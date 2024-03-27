@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventsByDate from './Components/EventsByDate'; // Adjust the import path as needed
 import DatePicker from './Components/DatePicker'; // Import the new DatePicker component
+import Header from './Components/Header'; //importerar headern
 
 class App extends Component {
   state = {
@@ -34,6 +35,7 @@ class App extends Component {
 
     return (
       <div>
+        <Header></Header>
         <DatePicker onChange={this.handleDateChange} />
         <EventsByDate events={events} date={selectedDate} />
       </div>
