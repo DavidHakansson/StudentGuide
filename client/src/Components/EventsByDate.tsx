@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import Event from './Event'; // Import the Event component
 
-class EventsByDate extends Component {
+interface EventObject {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  category: string;
+  nation: string;
+  imageUrl: string;
+}
+
+interface Props {
+  events: EventObject[];
+  date: string;
+}
+
+class EventsByDate extends Component<Props> {
   // Function to group events by category
-  groupEventsByCategory(events) {
-    return events.reduce((acc, event) => {
+  groupEventsByCategory(events: EventObject[]) {
+    return events.reduce((acc: { [key: string]: EventObject[] }, event: EventObject) => {
       (acc[event.category] = acc[event.category] || []).push(event);
       return acc;
     }, {});
   }
 
   // Function to sort events by time within each category
-  sortEventsByTime(events) {
+  sortEventsByTime(events: EventObject[]) {
     return events.sort((a, b) => a.time.localeCompare(b.time));
   }
 

@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import '../Styling/DatePicker.css'; // Import the CSS
 
-function DatePicker({ onChange }) {
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+// Define the type for the props
+interface DatePickerProps {
+  onChange: (date: string) => void;
+}
+
+const DatePicker: React.FC<DatePickerProps> = ({ onChange }) => {
+  const [date, setDate] = useState<string>(new Date().toISOString().split('T')[0]);
 
   useEffect(() => {
     onChange(date);
   }, [date, onChange]);
 
-  const handlePrevDay = () => {
+  const handlePrevDay = (): void => {
     const prevDay = new Date(date);
     prevDay.setDate(prevDay.getDate() - 1);
     setDate(prevDay.toISOString().split('T')[0]);
   };
 
-  const handleNextDay = () => {
+  const handleNextDay = (): void => {
     const nextDay = new Date(date);
     nextDay.setDate(nextDay.getDate() + 1);
     setDate(nextDay.toISOString().split('T')[0]);
@@ -28,7 +33,7 @@ function DatePicker({ onChange }) {
         type="date"
         id="date-picker"
         value={date}
-        onChange={e => setDate(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setDate(e.target.value)}
       />
       <button onClick={handleNextDay}>&gt;</button>
     </div>

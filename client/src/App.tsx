@@ -25,7 +25,7 @@ class App extends Component {
       });
   }
 
-  handleDateChange = (date) => {
+  handleDateChange = (date : string)  => {
     this.setState({ selectedDate: date });
   }
 
@@ -40,5 +40,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
