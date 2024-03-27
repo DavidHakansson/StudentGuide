@@ -1,21 +1,13 @@
 
 import React, { Component } from 'react';
 import '../Styling/Event.css'; 
+import {EventObject} from './Types';
 
 // Define the types for the event object
-export interface EventInfo {
-    id: string;
-    title: string;
-    date: string;
-    time: string;
-    category: string;
-    nation: string;
-    imageUrl: string;
-}
 
 // Define the type for the component's props
 interface EventProps {
-    event: EventInfo;
+    event: EventObject;
 }
 
 class Event extends Component<EventProps> {
