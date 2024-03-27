@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../Styling/Event.css'; 
 
 // Define the types for the event object
-interface EventInfo {
+export interface EventInfo {
     id: string;
     title: string;
     date: string;
