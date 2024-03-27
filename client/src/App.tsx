@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import EventsByDate from './Components/EventsByDate'; // Adjust the import path as needed
 import DatePicker from './Components/DatePicker'; // Import the new DatePicker component
+import CategoryDropDown from './Components/CategoryDropDown';
+import Header from './Components/Header'; //importerar headern
 
 class App extends Component {
   state = {
     events: [],
     selectedDate: '2024-04-30', // Default or initial date
+    selectedCategories: ['Pub', 'Breakfast', 'Lunch', ]
   };
 
   componentDidMount() {
@@ -28,14 +31,20 @@ class App extends Component {
   handleDateChange = (date : string)  => {
     this.setState({ selectedDate: date });
   }
+  handleCategoryChange = (categories : string[])  => {
+    this.setState({ selectedCategories: categories});
+  }
 
   render() {
-    const { events, selectedDate } = this.state;
+    const { events, selectedDate, selectedCategories } = this.state;
 
     return (
       <div>
+        <Header></Header>
         <DatePicker onChange={this.handleDateChange} />
-        <EventsByDate events={events} date={selectedDate} />
+        <CategoryDropDown onChange={this.handleCategoryChange}/>
+        <EventsByDate categories={selectedCategories} events={events} date={selectedDate} />
+
       </div>
     );
   }

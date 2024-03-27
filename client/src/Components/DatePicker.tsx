@@ -27,17 +27,20 @@ const DatePicker: React.FC<DatePickerProps> = ({ onChange }) => {
 
   return (
     <div className="date-picker-container">
-      <button onClick={handlePrevDay}>&lt;</button>
-      <label htmlFor="date-picker">Choose a date: </label>
-      <input
-        type="date"
-        id="date-picker"
-        value={date}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setDate(e.target.value)}
-      />
-      <button onClick={handleNextDay}>&gt;</button>
+      <div className="date-selection">
+        <button onClick={handlePrevDay}>&lt;</button>
+        <input
+          type="date"
+          id="date-picker"
+          value={date}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setDate(e.target.value)}
+        />
+        <button onClick={handleNextDay}>&gt;</button>
+      </div>
     </div>
   );
+  
+  
 }
 
 export default DatePicker;

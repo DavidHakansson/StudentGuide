@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import Event from './Event'; // Import the Event component
+import { EventObject } from './Types'; 
 
-interface EventObject {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  category: string;
-  nation: string;
-  imageUrl: string;
-}
 
 interface Props {
   events: EventObject[];
   date: string;
+  categories: string[];
 }
 
 class EventsByDate extends Component<Props> {
@@ -23,7 +16,10 @@ class EventsByDate extends Component<Props> {
       (acc[event.category] = acc[event.category] || []).push(event);
       return acc;
     }, {});
+  
+  
   }
+
 
   // Function to sort events by time within each category
   sortEventsByTime(events: EventObject[]) {
@@ -31,14 +27,16 @@ class EventsByDate extends Component<Props> {
   }
 
   render() {
-    const { events, date } = this.props; // events is an array of event objects, date is the selected date
+    const { events, date , categories} = this.props; // events is an array of event objects, date is the selected date
 
+    const eventsFilteredByCategory = events.filter(event => categories.includes(event.category));  
     // Filter events by the selected date
-    const eventsForDate = this.groupEventsByCategory(events.filter(event => event.date === date));
+    const eventsForDate = this.groupEventsByCategory(eventsFilteredByCategory.filter(event => event.date === date));
+
 
     return (
       <div>
-        <h1 className="text-center">Events for {date}</h1>
+        <h4 className="text-center">Events for {date}</h4>
         <div className="container">
           {Object.keys(eventsForDate).length > 0 ? (
             Object.entries(eventsForDate).map(([category, events]) => (
