@@ -36,7 +36,7 @@ class EventsByDate extends Component<Props> {
 
     return (
       <div>
-        <h1 className="text-center">Events for {date}</h1>
+        <h4 className="text-center">Events for {date}</h4>
         <div className="container">
           {Object.keys(eventsForDate).length > 0 ? (
             Object.entries(eventsForDate).map(([category, events]) => (
