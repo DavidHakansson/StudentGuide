@@ -4,7 +4,7 @@
       "title": "Tisdags Klobb",
       "date": "2024-03-26",
       "time": "20:00",
-      "category": "Nightclub",
+      "category": "Club",
       "nation": "Snerikes",
       "description": "Dance the night away at Snerikes.",
       "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fsnerikes.se%2Fwp%2Fwp-content%2Fuploads%2F1483501_10153575826660058_1275842168_n-705x468.jpg&f=1&nofb=1&ipt=ea48733839a6f1ae788819fd41adb95577b6add52c0412dc3a6e0f11eeb52bfa&ipo=images"
@@ -21,10 +21,10 @@
     },
     {
       "id": "3",
-      "title": "Norrlands Cafe",
+      "title": "Norrlands Fika",
       "date": "2024-03-26",
       "time": "15:00",
-      "category": "Cafe",
+      "category": "Fika",
       "nation": "Norrlands",
       "description": "Enjoy a traditional Swedish fika at Norrlands nation.",
       "imageUrl": "https://example.com/image3.jpg"
@@ -34,7 +34,7 @@
       "title": "Gasque at V-Dala",
       "date": "2024-03-26",
       "time": "19:00",
-      "category": "Dinner Party",
+      "category": "Gasque",
       "nation": "V-Dala",
       "description": "Experience a traditional student dinner at V-Dala nation.",
       "imageUrl": "https://example.com/image4.jpg"
@@ -44,7 +44,7 @@
       "title": "Jazzkväll",
       "date": "22024-03-27",
       "time": "20:00",
-      "category": "Live Music",
+      "category": "Pub",
       "nation": "Uplands",
       "description": "Enjoy an evening of live jazz music at Uplands nation.",
       "imageUrl": "https://example.com/image5.jpg"
@@ -54,7 +54,7 @@
       "title": "Quiz Night",
       "date": "2024-03-27",
       "time": "18:00",
-      "category": "Quiz",
+      "category": "Other",
       "nation": "Gästrike-Hälsinge",
       "description": "Test your knowledge at Gästrike-Hälsinge nation's quiz night.",
       "imageUrl": "https://example.com/image6.jpg"
@@ -74,9 +74,9 @@
       "title": "Outdoor Cinema",
       "date": "2024-03-27",
       "time": "21:00",
-      "category": "Movie",
+      "category": "Other",
       "nation": "Kalmar",
-      "description": "Watch a classic movie under the stars at Kalmar nation.",
+      "description": "Watch a classic Other under the stars at Kalmar nation.",
       "imageUrl": "https://example.com/image8.jpg"
     },
     {
@@ -84,9 +84,9 @@
       "title": "Göteborgs Rock Night",
       "date": "2024-03-26",
       "time": "21:00",
-      "category": "Nightclub",
+      "category": "Club",
       "nation": "Göteborgs",
-      "description": "Rock out at Göteborgs nation's vibrant rock-themed nightclub event.",
+      "description": "Rock out at Göteborgs nation's vibrant rock-themed club event.",
       "imageUrl": "https://example.com/image9.jpg"
     },
     {
@@ -104,7 +104,7 @@
       "title": "Wermlands Indie Night",
       "date": "2024-03-27",
       "time": "20:00",
-      "category": "Nightclub",
+      "category": "Club",
       "nation": "Wermlands",
       "description": "Discover indie music gems at Wermlands nation's indie music night.",
       "imageUrl": "https://example.com/image11.jpg"
