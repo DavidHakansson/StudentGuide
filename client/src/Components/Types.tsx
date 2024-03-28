@@ -25,8 +25,8 @@ export const EventCategoryOptions: readonly EventCategoryOption[] = [
     {value: 'Brunch', label: 'Brunch'},
     {value: 'Lunch', label: 'Lunch'},
     {value: 'Fika', label: 'Fika'},
-    {value: 'Restaurant', label: 'Restaurant'},
     {value: 'Pub', label: 'Pub'},
+    {value: 'Restaurant', label: 'Restaurant'},
     {value: 'Club', label: 'Club'},
     {value: 'Gasque', label: 'Gasque'},
     {value: 'Sport', label: 'Sport'},
@@ -34,3 +34,9 @@ export const EventCategoryOptions: readonly EventCategoryOption[] = [
     {value: 'Other', label: 'Other'}
 ];
 
+export const DefaultCategoryOptions = [
+    EventCategoryOptions[0], // Breakfast
+    EventCategoryOptions[2], // Lunch 
+    EventCategoryOptions[3], // Fika
+    EventCategoryOptions[4], // Pub
+    EventCategoryOptions[6]] // Club
