@@ -34,3 +34,19 @@ export const EventCategoryOptions: readonly EventCategoryOption[] = [
     {value: 'Other', label: 'Other'}
 ];
 
+export const nationImageMap = {
+    'Stockholms nation': 'Stockholm.png',
+    'Uplands nation': 'Uplands.png',
+    'Gästrike-Hälsinge nation': 'GH.png', // Assuming GH stands for Gästrike-Hälsinge
+    'Östgöta nation': 'Ostgota.png',
+    'Västgöta nation': 'Vastgota.png',
+    'Södermanlands-Nerikes nation': 'Snerike.png',
+    'Västmanlands-Dala nation': 'Vdala.png',
+    'Smålands nation': 'Smalands.png',
+    'Göteborgs nation': 'Goteborg.gif',
+    'Kalmar nation': 'kalmar.png',
+    'Värmlands nation': 'Varmlands.png',
+    'Norrlands nation': 'Norrland.png',
+    'Gotlands nation': 'Gotland.gif',
+};
+
