@@ -35,19 +35,23 @@ class Event extends Component<EventProps> {
         const imageFilename = nationImageMap[nation]
         const imageUrl = `/NationsEmblem/${imageFilename}`;
 
-
         return (
-            <div className="card mb-4 shadow-sm bg-light" style={{ width: '18rem', borderRadius: '15px' }}>
-                <img src={imageUrl} className="card-img-top" alt={title} style={{ height: '200px', objectFit: 'cover', borderTopLeftRadius: '15px', borderTopRightRadius: '15px' }} />
-                <div className="card-body text-center">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
-                    <p className="card-text">{nation}</p>
-                    <a href={`/event/${id}`} className="btn btn-primary">Learn More</a>
+            <div className="card mb-4 shadow-sm bg-light">
+                <div className="row no-gutters">
+                    <div className="col-md-4">
+                        <img src={imageUrl} className="card-img-top" alt={title} />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title">{title}</h5>
+                            <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
+                            <p className="card-text">{nation}</p>
+                            {/*<a href={`/event/${id}`} className="btn btn-primary btn-sm">Learn More</a>*/}
+                        </div>
+                    </div>
                 </div>
             </div>
         );
-        
     }
 }
 

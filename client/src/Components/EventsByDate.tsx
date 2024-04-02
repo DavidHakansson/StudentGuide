@@ -29,6 +29,8 @@ class EventsByDate extends Component<Props> {
   render() {
     const { events, date , categories} = this.props; // events is an array of event objects, date is the selected date
 
+
+
     const eventsFilteredByCategory = events.filter(event => categories.includes(event.category));  
     // Filter events by the selected date
     const eventsForDate = this.groupEventsByCategory(eventsFilteredByCategory.filter(event => event.date === date));
