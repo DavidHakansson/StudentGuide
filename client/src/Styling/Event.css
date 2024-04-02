@@ -1,0 +1,11 @@
+/* Event.css */
+.card {
+    transition: transform 0.2s; /* Animation for hover effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+  }
+  
+
+
