@@ -42,7 +42,7 @@ class Event extends Component<EventProps> {
                 <div className="card-body text-center">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
-                    <p className="card-text">{nation} nation</p>
+                    <p className="card-text">{nation}</p>
                     <a href={`/event/${id}`} className="btn btn-primary">Learn More</a>
                 </div>
             </div>
