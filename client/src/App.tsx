@@ -4,9 +4,8 @@ import DatePicker from './Components/DatePicker'; // Import the new DatePicker c
 import CategoryDropDown from './Components/CategoryDropDown';
 import Header from './Components/Header'; //importerar headern
 import { DefaultCategoryOptions } from './Components/Types'; // Import the default category options
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
 
 
 class App extends Component {
@@ -19,7 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     const {selectedCategories} = this.state;
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
     fetch('/SampleData/EventData.json')
       .then(response => {
         if (!response.ok) {
