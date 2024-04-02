@@ -22,9 +22,14 @@ class EventsByDate extends Component<Props> {
 
 
   // Function to sort events by time within each category
-  sortEventsByTime(events: EventObject[]) {
-    return events.sort((a, b) => a.time.localeCompare(b.time));
-  }
+sortEventsByTime(events: EventObject[]) {
+  return events.sort((a, b) => {
+    const timeA = typeof a.time === "string" ? a.time : "";
+    const timeB = typeof b.time === "string" ? b.time : "";
+
+    return timeA.localeCompare(timeB);
+  });
+}
 
   render() {
     const { events, date , categories} = this.props; // events is an array of event objects, date is the selected date
