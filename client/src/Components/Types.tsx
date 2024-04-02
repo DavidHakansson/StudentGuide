@@ -40,3 +40,4 @@ export const DefaultCategoryOptions = [
     EventCategoryOptions[3], // Fika
     EventCategoryOptions[4], // Pub
     EventCategoryOptions[6]] // Club
+
