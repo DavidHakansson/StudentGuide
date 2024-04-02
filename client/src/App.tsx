@@ -4,8 +4,13 @@ import DatePicker from './Components/DatePicker'; // Import the new DatePicker c
 import CategoryDropDown from './Components/CategoryDropDown';
 import Header from './Components/Header'; //importerar headern
 import { DefaultCategoryOptions } from './Components/Types'; // Import the default category options
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 
 class App extends Component {
+  
   state = {
     events: [],
     selectedDate: '2024-04-30', // Default or initial date
@@ -14,7 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     const {selectedCategories} = this.state;
-
+    ReactGA.pageview(window.location.pathname + window.location.search);
     fetch('/SampleData/EventData.json')
       .then(response => {
         if (!response.ok) {
@@ -26,7 +31,7 @@ class App extends Component {
       .then(data => {
         console.log('Fetched Data:', data);
         this.setState({ events: data });
-      })
+      }) 
       .catch(error => {
         console.error('Error during fetch:', error);
       });
