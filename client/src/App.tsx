@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     const {selectedCategories} = this.state;
 
-    fetch('/SampleData/MockEvents.json')
+    fetch('/SampleData/EventData.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
