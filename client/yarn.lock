@@ -1419,6 +1419,11 @@
   "resolved" "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.1.tgz"
   "version" "0.2.1"
 
+"@fontsource/raleway@^5.0.17":
+  version "5.0.17"
+  resolved "https://registry.npmjs.org/@fontsource/raleway/-/raleway-5.0.17.tgz"
+  integrity sha512-JQ86C+y7jSnaxKaqhYX5i6suc7IgUvAkVnP+Z7iWvtrZRl94nXzUU89E84eMq6tCOmbBin/uvtAGfgdJGskT1A==
+
 "@humanwhocodes/config-array@^0.11.14":
   "integrity" "sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.14.tgz"

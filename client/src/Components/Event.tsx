@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import '../Styling/Event.css'; 
 import {EventObject} from './Types';
@@ -38,10 +37,10 @@ class Event extends Component<EventProps> {
         return (
             <div className="card mb-4 shadow-sm bg-light">
                 <div className="row no-gutters">
-                    <div className="col-md-4">
+                    <div className="col-2 col-md-4 d-flex align-items-center justify-content-center">
                         <img src={imageUrl} className="card-img-top" alt={title} />
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-10 col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{title}</h5>
                             <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
@@ -51,7 +50,7 @@ class Event extends Component<EventProps> {
                     </div>
                 </div>
             </div>
-        );
+        );        
     }
 }
 

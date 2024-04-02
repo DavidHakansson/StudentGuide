@@ -49,7 +49,9 @@ class App extends Component {
         <DatePicker onChange={this.handleDateChange} />
         <CategoryDropDown onChange={this.handleCategoryChange}/>
         <EventsByDate categories={selectedCategories} events={events} date={selectedDate} />
-
+        <p>*This website is not affiliated with Uppsalas studentnationer, it is an independant project.
+          This means that the information shown here might be faulty at times where we have not been able to update the information or find the correct information through the nations channels.
+        </p>
       </div>
     );
   }

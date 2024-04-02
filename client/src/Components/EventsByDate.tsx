@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Event from './Event'; // Import the Event component
 import { EventObject } from './Types'; 
+import '../Styling/EventsByDate.css'; 
 
 
 interface Props {
@@ -43,11 +44,10 @@ sortEventsByTime(events: EventObject[]) {
 
     return (
       <div>
-        <h4 className="text-center">Events for {date}</h4>
         <div className="container">
           {Object.keys(eventsForDate).length > 0 ? (
             Object.entries(eventsForDate).map(([category, events]) => (
-              <div key={category}>
+              <div key={category} className='custom-border padding'>
                 <h2 className="text-center mt-4">{category}</h2>
                 <div className="row justify-content-center">
                   {this.sortEventsByTime(events).map(event => (
