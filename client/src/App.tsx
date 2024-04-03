@@ -18,6 +18,8 @@ class App extends Component {
 
   componentDidMount() {
     const {selectedCategories} = this.state;
+    ReactGA.initialize(TRACKING_ID);
+
     ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
     fetch('/SampleData/EventData.json')
       .then(response => {
