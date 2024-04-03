@@ -5,10 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TL155XBJ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5TL155XBJ9');
+    </script>
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
