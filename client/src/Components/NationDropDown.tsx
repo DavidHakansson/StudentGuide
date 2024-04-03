@@ -27,7 +27,9 @@ const DropdownIndicator = (
 };
 
 const NationDropDown: React.FC<NationDropDownProps> = ({ onChange }) => {
-  const [nations, setNations] = useState<string[]>([]);
+  const allOptionValues = DefaultNationOptions.map(option => option.value);
+
+  const [nations, setNations] = useState<string[]>(allOptionValues);
 
   useEffect(() => {
     onChange(nations);
