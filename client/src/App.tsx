@@ -16,6 +16,7 @@ class App extends Component {
     selectedCategories: DefaultCategoryOptions.map(option => option.value), // Default or initial categories
   };
 
+
   componentDidMount() {
     const {selectedCategories} = this.state;
     ReactGA.initialize(TRACKING_ID);
