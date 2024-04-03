@@ -27,8 +27,8 @@ export const EventNationOptions: readonly EventNationOption[] = [
   { value: "Östgöta nation", label: "Östgöta nation" },
   { value: "Norrlands nation", label: "Norrlands nation" },
   {
-    value: "Södermanland-nerikes nation",
-    label: "Södermanland-nerikes nation",
+    value: "Södermanland-Nerikes nation",
+    label: "Södermanland-Nerikes nation",
   },
   { value: "Uplands nation", label: "Uplands nation" },
   { value: "Göteborgs nation", label: "Göteborgs nation" },
