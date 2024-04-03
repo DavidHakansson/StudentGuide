@@ -18,9 +18,13 @@ class App extends Component {
     selectedNations: DefaultNationOptions.map((option) => option.value), // Default or initial nations
   };
 
+
   componentDidMount() {
     const { selectedCategories } = this.state;
     const { selectedNations } = this.state;
+    const {selectedCategories} = this.state;
+    ReactGA.initialize(TRACKING_ID);
+
     ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
     fetch("/SampleData/EventData.json")
       .then((response) => {
