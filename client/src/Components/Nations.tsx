@@ -18,8 +18,8 @@ export interface EventNationOption {
 export const EventNationOptions: readonly EventNationOption[] = [
   { value: "Stockholms nation", label: "Stockholms nation" },
   {
-    value: "Gästrike-hälsninglands nation",
-    label: "Gästrike-hälsninglands nation",
+    value: "Gästrike-Hälsinge nation",
+    label: "Gästrike-Hälsinge nation",
   },
   { value: "Västmanlands-Dala nation", label: "Västmanlands-Dala nation" },
   { value: "Värmlands nation", label: "Värmlands nation" },
@@ -27,14 +27,14 @@ export const EventNationOptions: readonly EventNationOption[] = [
   { value: "Östgöta nation", label: "Östgöta nation" },
   { value: "Norrlands nation", label: "Norrlands nation" },
   {
-    value: "Södermanland-Nerikes nation",
-    label: "Södermanland-Nerikes nation",
+    value: "Södermanland-nerikes nation",
+    label: "Södermanland-nerikes nation",
   },
   { value: "Uplands nation", label: "Uplands nation" },
   { value: "Göteborgs nation", label: "Göteborgs nation" },
   { value: "Västgöta nation", label: "Västgöta nation" },
   { value: "Smålands nation", label: "Smålands nation" },
-  { value: "Kalmar Nation", label: "Kalmar Nation" },
+  { value: "Kalmar nation", label: "Kalmar nation" },
 ];
 
 export const DefaultNationOptions = [

@@ -7,6 +7,7 @@ import Header from "./Components/Header"; //importerar headern
 import { DefaultCategoryOptions } from "./Components/Types"; // Import the default category options
 import { DefaultNationOptions } from "./Components/Nations"; // Import the default category options
 import ReactGA from "react-ga4";
+
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
 
 class App extends Component {
@@ -59,6 +60,7 @@ class App extends Component {
         <DatePicker onChange={this.handleDateChange} />
         <CategoryDropDown onChange={this.handleCategoryChange} />
         <NationDropDown onChange={this.handleNationChange} />
+
         <EventsByDate
           categories={selectedCategories}
           events={events}
@@ -67,7 +69,7 @@ class App extends Component {
         />
         <p>
           *This website is not affiliated with Uppsalas studentnationer, it is
-          an independant project. This means that the information shown here
+          an independent project. This means that the information shown here
           might be faulty at times where we have not been able to update the
           information or find the correct information through the nations
           channels.
