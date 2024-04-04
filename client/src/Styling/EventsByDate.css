@@ -10,3 +10,8 @@
 .custom-border:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover for interaction */
 }
+
+.darker-grey-background {
+  background-color: #f0f0f0; /* Adjust the color as needed */
+}
+

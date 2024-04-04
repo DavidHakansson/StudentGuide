@@ -60,9 +60,19 @@ class App extends Component {
     return (
       <div>
         <Header></Header>
-        <DatePicker onChange={this.handleDateChange} />
-        <CategoryDropDown onChange={this.handleCategoryChange} />
-        <NationDropDown onChange={this.handleNationChange} />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+            <DatePicker onChange={this.handleDateChange} />
+            </div>
+            <div className="col-md-6 mb-3">
+              <CategoryDropDown onChange={this.handleCategoryChange} />
+            </div>
+            <div className="col-md-6 d-md-flex justify-content-end mb-3">
+              <NationDropDown onChange={this.handleNationChange} />
+            </div>
+          </div>
+        </div>
 
         <EventsByDate
           categories={selectedCategories}

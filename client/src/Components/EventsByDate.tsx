@@ -51,8 +51,8 @@ class EventsByDate extends Component<Props> {
         <div className="container">
           {Object.keys(eventsForDate).length > 0 ? (
             Object.entries(eventsForDate).map(([category, events]) => (
-              <div key={category} className="custom-border padding">
-                <h2 className="text-center mt-4">{category}</h2>
+              <div key={category} className="custom-border padding darker-grey-background">
+                <h3 className="text-center category-title">{category}</h3>
                 <div className="row justify-content-center">
                   {this.sortEventsByTime(events).map((event) => (
                     <div
