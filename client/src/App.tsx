@@ -43,14 +43,32 @@ class App extends Component {
       });
   }
 
+  
+  
+
   handleDateChange = (date: string) => {
     this.setState({ selectedDate: date });
+    ReactGA.event({
+      category: 'User Interaction',
+      action: 'Date Change',
+      label: date
+    });
   };
   handleCategoryChange = (categories: string[]) => {
     this.setState({ selectedCategories: categories });
+    ReactGA.event({
+      category: 'User Interaction',
+      action: 'Category Change',
+      label: categories.join(', ')
+    });
   };
   handleNationChange = (nations: string[]) => {
     this.setState({ selectedNations: nations });
+    ReactGA.event({
+      category: 'User Interaction',
+      action: 'Nation Change',
+      label: nations.join(', ')
+    });
   };
 
   render() {
