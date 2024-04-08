@@ -3,7 +3,6 @@ import EventsByDate from "./EventsByDate"; // Adjust the import path as needed
 import DatePicker from "./DatePicker"; // Import the new DatePicker component
 import CategoryDropDown from "./CategoryDropDown";
 import NationDropDown from "./NationDropDown";
-import Header from "./Header"; //importerar headern
 import { DefaultCategoryOptions } from "./Types"; // Import the default category options
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
