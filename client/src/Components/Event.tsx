@@ -11,7 +11,7 @@ interface EventProps {
 
 class Event extends Component<EventProps> {
   render() {
-    const { id, title, date, time, nation } = this.props.event;
+    const { id, title, date, time, nation, link } = this.props.event;
 
     const nationImageMap: Record<string, string> = {
       "Stockholms nation": "Stockholm.png",
@@ -45,7 +45,6 @@ class Event extends Component<EventProps> {
                 {date} at {time}
               </p>
               <p className="card-text">{nation}</p>
-              {/*<a href={`/event/${id}`} className="btn btn-primary btn-sm">Learn More</a>*/}
             </div>
           </div>
         </div>
