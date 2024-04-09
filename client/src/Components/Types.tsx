@@ -51,7 +51,7 @@ export const nationImageMap : Record<string, string> = {
     'Västmanlands-Dala nation': '/NationsEmblem/Vdala.png',
     'Smålands nation': '/NationsEmblem/Smalands.png',
     'Göteborgs nation': '/NationsEmblem/Goteborg.gif',
-    'Kalmar Nation': '/NationsEmblem/kalmar.png',
+    'Kalmar nation': '/NationsEmblem/kalmar.png',
     'Värmlands nation': '/NationsEmblem/Varmlands.png',
     'Norrlands nation': '/NationsEmblem/Norrland.png',
     'Gotlands nation': '/NationsEmblem/Gotland.gif',

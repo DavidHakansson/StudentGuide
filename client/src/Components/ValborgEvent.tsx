@@ -1,38 +1,35 @@
-
+// ValborgEvent Component
 import React, { Component } from 'react';
 import '../Styling/Event.css'; 
-import {EventObject} from './Types';
+import { EventObject } from './Types';
 import { Card } from 'react-bootstrap';
 
-
-
-// Define the types for the event object
-
-// Define the type for the component's props
 interface EventProps {
     event: EventObject;
 }
 
-class Event extends Component<EventProps> {
+class ValborgEvent extends Component<EventProps> {
     render() {
         const { id, title, date, time, nation, link} = this.props.event;
-        
-
 
         return (
-            <div className="card-wrapper mb-4 shadow-sm">
-            <Card className="bg-light" style={{ width: '300px', height: '200px', overflow: 'hidden' }}>
-              <Card.Body>
-                <Card.Title className="text-center">{title}</Card.Title>
-                <Card.Text className="text-center">{nation}</Card.Text>
-                <div className="d-flex justify-content-center">
-                  <a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>
-                </div>
-              </Card.Body>
-            </Card>
+        <div key={id} className="col">
+          <div className="card shadow-sm bg-light mb" style={{ height: "90%" }}>
+            <div className="container" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+              <div className="card-body text-center">
+                <h5 className="card-title">{title}</h5>
+
+              </div>
+              <div className="card-footer text-center" style={{ border: "none", background: "none"}}>
+              <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
+                <p className="card-text">{nation}</p>
+                <a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>
+              </div>
+            </div>
           </div>
+        </div>
         );
     }
 }
 
-export default Event;
+export default ValborgEvent;

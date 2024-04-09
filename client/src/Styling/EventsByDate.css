@@ -12,6 +12,9 @@
 }
 
 .darker-grey-background {
-  background-color: #f0f0f0; /* Adjust the color as needed */
 }
 
+.card {
+  overflow: hidden; /* Hide any overflowing content */
+  /* Add any other necessary styling for the card */
+}
