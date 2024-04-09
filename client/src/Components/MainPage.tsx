@@ -3,7 +3,7 @@ import EventsByDate from "./EventsByDate"; // Adjust the import path as needed
 import DatePicker from "./DatePicker"; // Import the new DatePicker component
 import CategoryDropDown from "./CategoryDropDown";
 import NationDropDown from "./NationDropDown";
-import { DefaultCategoryOptions } from "./Types"; // Import the default category options
+import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the default category options
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
 
@@ -16,7 +16,6 @@ class MainPage extends React.Component {
     selectedCategories: DefaultCategoryOptions.map((option) => option.value), // Default or initial categories
     selectedNations: DefaultNationOptions.map((option) => option.value), // Default or initial nations
   };
-
 
   componentDidMount() {
     const { selectedCategories } = this.state;
@@ -35,7 +34,28 @@ class MainPage extends React.Component {
       })
       .then((data) => {
         console.log("Fetched Data:", data);
-        this.setState({ events: data });
+        // Sort the data based on category order
+        const categoryOrder = [
+          "Breakfast",
+          "Brunch",
+          "Lunch",
+          "Fika",
+          "Pub",
+          "Restaurant",
+          "Club",
+          "Gasque",
+          "Sport",
+          "ReceptionHours",
+          "Other",
+        ];
+
+        const sortedData = data.sort((a: EventObject, b: EventObject) => {
+          const categoryAIndex = categoryOrder.indexOf(a.category);
+          const categoryBIndex = categoryOrder.indexOf(b.category);
+          return categoryAIndex - categoryBIndex;
+        });
+
+        this.setState({ events: sortedData });
       })
       .catch((error) => {
         console.error("Error during fetch:", error);
@@ -45,25 +65,25 @@ class MainPage extends React.Component {
   handleDateChange = (date: string) => {
     this.setState({ selectedDate: date });
     ReactGA.event({
-      category: 'User Interaction',
-      action: 'Date Change',
-      label: date
+      category: "User Interaction",
+      action: "Date Change",
+      label: date,
     });
   };
   handleCategoryChange = (categories: string[]) => {
     this.setState({ selectedCategories: categories });
     ReactGA.event({
-      category: 'User Interaction',
-      action: 'Category Change',
-      label: categories.join(', ')
+      category: "User Interaction",
+      action: "Category Change",
+      label: categories.join(", "),
     });
   };
   handleNationChange = (nations: string[]) => {
     this.setState({ selectedNations: nations });
     ReactGA.event({
-      category: 'User Interaction',
-      action: 'Nation Change',
-      label: nations.join(', ')
+      category: "User Interaction",
+      action: "Nation Change",
+      label: nations.join(", "),
     });
   };
 
@@ -76,7 +96,7 @@ class MainPage extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-            <DatePicker onChange={this.handleDateChange} />
+              <DatePicker onChange={this.handleDateChange} />
             </div>
             <div className="col-md-6 mb-3">
               <CategoryDropDown onChange={this.handleCategoryChange} />
@@ -94,10 +114,11 @@ class MainPage extends React.Component {
           nations={selectedNations}
         />
         <p>
-          *This website is not affiliated with Uppsalas studentnationer or kuratorskonventet, it is
-          an independent project hoping to temporarly fill the gap. This means that the information shown here
-          might be faulty at times where we have not been able to update the
-          information or find the correct information through the nations channels.
+          *This website is not affiliated with Uppsalas studentnationer or
+          kuratorskonventet, it is an independent project hoping to temporarly
+          fill the gap. This means that the information shown here might be
+          faulty at times where we have not been able to update the information
+          or find the correct information through the nations channels.
         </p>
       </div>
     );
