@@ -98,13 +98,16 @@ class MainPage extends React.Component {
             <div className="col-md-12">
               <DatePicker onChange={this.handleDateChange} />
             </div>
-            <div className="col-md-6 mb-3">
-              <CategoryDropDown onChange={this.handleCategoryChange} />
-            </div>
-            <div className="col-md-6 d-md-flex justify-content-end mb-3">
-              <NationDropDown onChange={this.handleNationChange} />
-            </div>
           </div>
+
+            <div className="row">
+              <div className=" mb-3 mr-1 ml-3">
+                <CategoryDropDown onChange={this.handleCategoryChange} />
+              </div>
+              <div className="mb-3 justify-content-right">
+                <NationDropDown onChange={this.handleNationChange} />
+              </div>
+            </div>
         </div>
 
         <EventsByDate

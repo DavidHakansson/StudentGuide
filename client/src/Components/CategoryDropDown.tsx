@@ -48,7 +48,7 @@ const CategoryDropDown : React.FC<CategoryDropDownProps> = ({ onChange }) => {
         maxSelectedLabels={0}
         placeholder="Select categories"
         className="w-full md:w-20rem"
-        selectedItemsLabel="{0} categories selected"
+        selectedItemsLabel="{0} categories chosen"
         selectAllLabel='All'
       />
     </div>
