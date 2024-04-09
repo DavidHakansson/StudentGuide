@@ -41,6 +41,24 @@ export const DefaultCategoryOptions = [
     EventCategoryOptions[4], // Pub
     EventCategoryOptions[6]] // Club
 
+export const AllCategoryOptions = [
+    EventCategoryOptions[0], // Breakfast
+    EventCategoryOptions[1],// brunch
+    EventCategoryOptions[2], // Lunch 
+    EventCategoryOptions[3], // Fika
+    EventCategoryOptions[4], // Pub
+    EventCategoryOptions[5], //restaurang
+    EventCategoryOptions[6], // Club
+    EventCategoryOptions[7], // gasque
+    EventCategoryOptions[8], // sport
+    EventCategoryOptions[9], // reception hours
+    EventCategoryOptions[10] // other
+
+
+
+
+];
+
 export const nationImageMap : Record<string, string> = {
     'Stockholms nation': '/NationsEmblem/Stockholm.png',
     'Uplands nation': '/NationsEmblem/Uplands.png',
