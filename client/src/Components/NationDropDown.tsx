@@ -42,10 +42,12 @@ const NationDropDown: React.FC<NationDropDownProps> = ({ onChange }) => {
         onChange={(e) => setNations(e.value)}
         options={DefaultNationOptions}
         optionLabel="label"
-        maxSelectedLabels={3}
+        maxSelectedLabels={0}
         placeholder="Select Nations"
         className="w-full md:w-20rem"
         selectedItemsLabel="{0} nations selected"
+        selectAllLabel='All'
+
       />
     </div>
   );
