@@ -1,15 +1,32 @@
-import React, { Component } from 'react';
-import App from '../App';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
+const Header: React.FC = () => {
+    const [expanded, setExpanded] = useState(false);
 
-    const Header: React.FC = () => {
-        return (
-            <div className='container text-center'>
-                <div className='header'>
-                  <h1>STUGGEN</h1>
-            </div>
-            </div>
-        );
-    }
-    
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    };
+
+    const headerStyle = {
+        fontSize: '2rem' // Adjust the font size here as needed
+    };
+
+    return (
+        <div className='container'>
+        <Navbar bg="light" expand="lg">
+            <Navbar.Brand as={Link} to="/" style={headerStyle}>STUGGEN</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleExpanded} />
+            <Navbar.Collapse id="basic-navbar-nav" className={`${expanded ? 'show' : ''}`}>
+                <Nav className="ml-auto">
+                    <Nav.Link as={Link} to="/Valborg" onClick={toggleExpanded}>Valborg</Nav.Link>
+                    {/* Add more Nav.Link components for additional menu items */}
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        </div>
+    );
+}
+
 export default Header;

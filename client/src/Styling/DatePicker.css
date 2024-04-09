@@ -3,7 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: #f8f9fa;
   border-radius: 5px;
