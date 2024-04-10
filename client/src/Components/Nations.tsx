@@ -17,24 +17,18 @@ export interface EventNationOption {
 }
 export const EventNationOptions: readonly EventNationOption[] = [
   { value: "Stockholms nation", label: "Stockholms nation" },
-  {
-    value: "Gästrike-Hälsinge nation",
-    label: "Gästrike-Hälsinge nation",
-  },
-  { value: "Västmanlands-Dala nation", label: "Västmanlands-Dala nation" },
-  { value: "Värmlands nation", label: "Värmlands nation" },
-  { value: "Gotlands nation", label: "Gotlands nation" },
-  { value: "Östgöta nation", label: "Östgöta nation" },
-  { value: "Norrlands nation", label: "Norrlands nation" },
-  {
-    value: "Södermanland-Nerikes nation",
-    label: "Södermanland-Nerikes nation",
-  },
   { value: "Uplands nation", label: "Uplands nation" },
-  { value: "Göteborgs nation", label: "Göteborgs nation" },
+  {value: "Gästrike-Hälsinge nation", label: "Gästrike-Hälsinge nation"},
+  { value: "Östgöta nation", label: "Östgöta nation" },
   { value: "Västgöta nation", label: "Västgöta nation" },
+  { value: "Södermanland-Nerikes nation", label: "Södermanland-Nerikes nation"},
+  { value: "Västmanlands-Dala nation", label: "Västmanlands-Dala nation" },
   { value: "Smålands nation", label: "Smålands nation" },
+  { value: "Göteborgs nation", label: "Göteborgs nation" },
   { value: "Kalmar nation", label: "Kalmar nation" },
+  { value: "Värmlands nation", label: "Värmlands nation" },
+  { value: "Norrlands nation", label: "Norrlands nation" },
+  { value: "Gotlands nation", label: "Gotlands nation" }
 ];
 
 export const DefaultNationOptions = [
