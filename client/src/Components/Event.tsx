@@ -9,6 +9,14 @@ interface EventProps {
   event: EventObject;
 }
 
+function linkConditional(link:string):any {
+  if(link !== null)
+  {
+    return(<a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>)
+  }
+  return '';
+}
+
 class Event extends Component<EventProps> {
   render() {
     const { id, title, date, time, nation, link } = this.props.event;
@@ -38,7 +46,7 @@ class Event extends Component<EventProps> {
           <div className="col-2 col-md-4 d-flex align-items-center justify-content-center">
             <img src={imageUrl} className="card-img-top" alt={title} />
           </div>
-          <div className="col-10 col-md-8">
+          <div className="col-10 col-md-8 justify-content-left">
             <div className="card-body">
               <h5 className="card-title">{title}</h5>
               <p className="card-subtitle mb-2 text-muted">
@@ -46,6 +54,9 @@ class Event extends Component<EventProps> {
               </p>
               <p className="card-text">{nation}</p>
             </div>
+            <div className="card-footer " style={{ border: "none", background: "none"}}>
+              {linkConditional(link)}
+              </div>
           </div>
         </div>
       </div>

@@ -18,10 +18,11 @@ body {
     border-radius: 10px;
     margin-bottom: 1rem;
 }
-.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
-    background:lightgray;
-    text-decoration: black;
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight span {
+    color: black;
 }
 .p-multiselect-select-all{
     text-align: center;
 }
+

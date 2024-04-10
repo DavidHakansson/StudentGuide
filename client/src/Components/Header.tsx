@@ -18,7 +18,7 @@ const NavigationBar = () => {
     <div className='container'>
       <Navbar bg="light" expand="lg" expanded={expanded}>
         {/* Replace Navbar.Brand with Image component */}
-        <Navbar.Brand as={Link} to="/" onClick={toggleExpanded}>
+        <Navbar.Brand as={Link} to="/">
           <img
             src={'/logo_alt2.png'}
             width="140"
