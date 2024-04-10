@@ -13,21 +13,6 @@ import { MultiSelect } from "primereact/multiselect";
 interface CategoryDropDownProps {
   onChange: (categories: string[]) => void;
 }
-
-
-
-const DropdownIndicator = (
-  props: DropdownIndicatorProps<EventCategoryOption, true>
-) => {
-  return (
-    <components.DropdownIndicator {...props}>
-      
-    </components.DropdownIndicator>
-  );
-};
-
-
-
 const CategoryDropDown : React.FC<CategoryDropDownProps> = ({ onChange }) => {
   const allOptionValues = DefaultCategoryOptions.map(option => option.value);
 
@@ -48,7 +33,7 @@ const CategoryDropDown : React.FC<CategoryDropDownProps> = ({ onChange }) => {
         maxSelectedLabels={0}
         placeholder="Select categories"
         className="w-full md:w-20rem"
-        selectedItemsLabel="{0} categories chosen"
+        selectedItemsLabel="{0} categories"
         selectAllLabel='All'
       />
     </div>

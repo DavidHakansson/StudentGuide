@@ -45,7 +45,7 @@ const NationDropDown: React.FC<NationDropDownProps> = ({ onChange }) => {
         maxSelectedLabels={0}
         placeholder="Select Nations"
         className="w-full md:w-20rem"
-        selectedItemsLabel="{0} nations chosen"
+        selectedItemsLabel="{0} nations"
         selectAllLabel='All'
 
       />
