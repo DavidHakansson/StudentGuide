@@ -4,6 +4,9 @@ import NationDropDown from "./NationDropDown";
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
 
+
+const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
+
 class Valborg extends React.Component{
     state = {
         events: [],
@@ -11,6 +14,7 @@ class Valborg extends React.Component{
       };
 
     componentDidMount() {
+        ReactGA.initialize(TRACKING_ID);
         const { selectedNations } = this.state;
         ReactGA.send({ hitType: "pageview", page: "/Valborg", title: "Valborg .)" });
         fetch("/SampleData/ValborgData.json")
