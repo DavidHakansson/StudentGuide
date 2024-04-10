@@ -46,9 +46,7 @@ class Valborg extends React.Component{
           <div>
             <div className="container">
               <div className="row">
-                <div className="col-md-6 mb-3">
-                </div>
-                <div className="col-md-6 d-md-flex justify-content-end mb-3">
+                <div className="col-md-6 d-md-flex mb-3 mt-2">
                   <NationDropDown onChange={this.handleNationChange} />
                 </div>
               </div>
