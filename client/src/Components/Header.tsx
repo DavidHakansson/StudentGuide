@@ -15,11 +15,12 @@ const Header: React.FC = () => {
 
     return (
         <div className='container'>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" expanded={expanded}>
             <Navbar.Brand as={Link} to="/" style={headerStyle}>STUGGEN</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleExpanded} />
             <Navbar.Collapse id="basic-navbar-nav" className={`${expanded ? 'show' : ''}`}>
                 <Nav className="ml-auto">
+                    <Nav.Link as={Link} to="/" onClick={toggleExpanded}>Home</Nav.Link>
                     <Nav.Link as={Link} to="/Valborg" onClick={toggleExpanded}>Valborg</Nav.Link>
                     {/* Add more Nav.Link components for additional menu items */}
                 </Nav>
