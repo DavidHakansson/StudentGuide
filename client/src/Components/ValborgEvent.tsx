@@ -7,8 +7,16 @@ import { Card } from 'react-bootstrap';
 interface EventProps {
     event: EventObject;
 }
-
+function linkConditional(link:string):any {
+  if(link !== null)
+  {
+    return(<a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>)
+  }
+  return '';
+}
 class ValborgEvent extends Component<EventProps> {
+
+
     render() {
         const { id, title, date, time, nation, link} = this.props.event;
 
@@ -23,7 +31,7 @@ class ValborgEvent extends Component<EventProps> {
               <div className="card-footer text-center" style={{ border: "none", background: "none"}}>
               <p className="card-subtitle mb-2 text-muted">{date} at {time}</p>
                 <p className="card-text">{nation}</p>
-                <a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>
+                {linkConditional(link)}
               </div>
             </div>
           </div>
