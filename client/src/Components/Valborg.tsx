@@ -12,6 +12,7 @@ class Valborg extends React.Component{
 
     componentDidMount() {
         const { selectedNations } = this.state;
+        ReactGA.send({ hitType: "pageview", page: "/Valborg", title: "Valborg .)" });
         fetch("/SampleData/ValborgData.json")
         .then((response) => {
         if (!response.ok) {
