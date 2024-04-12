@@ -45,7 +45,7 @@ class MainPage extends React.Component {
           "Club",
           "Gasque",
           "Sport",
-          "ReceptionHours",
+          "Reception hours",
           "Other",
         ];
 
@@ -100,14 +100,14 @@ class MainPage extends React.Component {
             </div>
           </div>
 
-            <div className="row">
-              <div className=" mb-3 mr-1 ml-3">
-                <CategoryDropDown onChange={this.handleCategoryChange} />
-              </div>
-              <div className="mb-3 justify-content-right">
-                <NationDropDown onChange={this.handleNationChange} />
-              </div>
+          <div className="row">
+            <div className=" mb-3 mr-1 ml-3">
+              <CategoryDropDown onChange={this.handleCategoryChange} />
             </div>
+            <div className="mb-3 justify-content-right">
+              <NationDropDown onChange={this.handleNationChange} />
+            </div>
+          </div>
         </div>
 
         <EventsByDate
