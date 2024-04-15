@@ -22,7 +22,10 @@ body {
 .p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight span {
     color: black;
 }
-.p-multiselect-select-all{
-    text-align: center;
+.p-multiselect-select-all-label
+{
+    display: inline-block;
+    margin-bottom: 0rem;
 }
+
 
