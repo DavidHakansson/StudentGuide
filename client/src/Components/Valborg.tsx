@@ -5,6 +5,7 @@ import { DefaultNationOptions } from "./Nations"; // Import the default category
 import ReactGA from "react-ga4";
 
 
+
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
 
 class Valborg extends React.Component{
