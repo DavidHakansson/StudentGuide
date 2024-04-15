@@ -18,3 +18,7 @@
   overflow: hidden; /* Hide any overflowing content */
   /* Add any other necessary styling for the card */
 }
+h3.category-title
+{
+  font-size:1.2rem;
+}
