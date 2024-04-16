@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import EventsByDate from "./EventsByDate"; // Adjust the import path as needed
 import DatePicker from "./DatePicker"; // Import the new DatePicker component
 import CategoryDropDown from "./CategoryDropDown";
@@ -6,33 +6,42 @@ import NationDropDown from "./NationDropDown";
 import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the default category options
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
+import Slide from "@mui/material/Slide";
+import Switch from "@mui/material/Switch";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
 
-class MainPage extends React.Component {
-  state = {
-    events: [],
-    selectedDate: "2024-04-30", // Default or initial date
-    selectedCategories: DefaultCategoryOptions.map((option) => option.value), // Default or initial categories
-    selectedNations: DefaultNationOptions.map((option) => option.value), // Default or initial nations
+const MainPage: React.FC = () => {
+  const [events, setEvents] = useState<EventObject[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string>("2024-04-30");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(
+    DefaultCategoryOptions.map((option) => option.value)
+  );
+  const [selectedNations, setSelectedNations] = useState<string[]>(
+    DefaultNationOptions.map((option) => option.value)
+  );
+  const [slideIn, setSlideIn] = useState(true);
+
+  const handleChange = () => {
+    setSlideIn(false);
+    setTimeout(() => {
+      setSlideIn(true);
+    }, 250); // 1000 milliseconds = 1 second
   };
 
-  componentDidMount() {
-    const { selectedCategories } = this.state;
-    const { selectedNations } = this.state;
-    ReactGA.initialize(TRACKING_ID);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        ReactGA.initialize(TRACKING_ID);
+        ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
 
-    ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
-    fetch("/SampleData/EventData.json")
-      .then((response) => {
+        const response = await fetch("/SampleData/EventData.json");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        this.handleCategoryChange(selectedCategories); //Load the default categories when the page loads
-        this.handleNationChange(selectedNations); //Load the default nations when the page loads
-        return response.json();
-      })
-      .then((data) => {
+
+        const data = await response.json();
         console.log("Fetched Data:", data);
         // Sort the data based on category order
         const categoryOrder = [
@@ -55,31 +64,40 @@ class MainPage extends React.Component {
           return categoryAIndex - categoryBIndex;
         });
 
-        this.setState({ events: sortedData });
-      })
-      .catch((error) => {
+        setEvents(sortedData);
+      } catch (error) {
         console.error("Error during fetch:", error);
-      });
-  }
+      }
+    };
 
-  handleDateChange = (date: string) => {
-    this.setState({ selectedDate: date });
+    fetchData();
+  }, [selectedCategories, selectedNations]);
+
+  const handleDateChange = (date: string) => {
+    if (date !== selectedDate) {
+      handleChange();
+    }
+
+    setSelectedDate(date);
+    console.log(date);
     ReactGA.event({
       category: "User Interaction",
       action: "Date Change",
       label: date,
     });
   };
-  handleCategoryChange = (categories: string[]) => {
-    this.setState({ selectedCategories: categories });
+
+  const handleCategoryChange = (categories: string[]) => {
+    setSelectedCategories(categories);
     ReactGA.event({
       category: "User Interaction",
       action: "Category Change",
       label: categories.join(", "),
     });
   };
-  handleNationChange = (nations: string[]) => {
-    this.setState({ selectedNations: nations });
+
+  const handleNationChange = (nations: string[]) => {
+    setSelectedNations(nations);
     ReactGA.event({
       category: "User Interaction",
       action: "Nation Change",
@@ -87,45 +105,44 @@ class MainPage extends React.Component {
     });
   };
 
-  render() {
-    const { events, selectedDate, selectedCategories, selectedNations } =
-      this.state;
-
-    return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <DatePicker onChange={this.handleDateChange} />
-            </div>
-          </div>
-
-          <div className="row">
-            <div className=" mb-3 mr-1 ml-3">
-              <CategoryDropDown onChange={this.handleCategoryChange} />
-            </div>
-            <div className="mb-3 justify-content-right">
-              <NationDropDown onChange={this.handleNationChange} />
-            </div>
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <DatePicker onChange={handleDateChange} />
           </div>
         </div>
 
-        <EventsByDate
-          categories={selectedCategories}
-          events={events}
-          date={selectedDate}
-          nations={selectedNations}
-        />
-        <p>
-          *This website is not affiliated with Uppsalas studentnationer or
-          kuratorskonventet, it is an independent project hoping to temporarly
-          fill the gap. This means that the information shown here might be
-          faulty at times where we have not been able to update the information
-          or find the correct information through the nations channels.
-        </p>
+        <div className="row">
+          <div className=" mb-3 mr-1 ml-3">
+            <CategoryDropDown onChange={handleCategoryChange} />
+          </div>
+          <div className="mb-3 justify-content-right">
+            <NationDropDown onChange={handleNationChange} />
+          </div>
+        </div>
       </div>
-    );
-  }
-}
+      <Slide in={slideIn} direction="right" mountOnEnter>
+        <div>
+          <EventsByDate
+            categories={selectedCategories}
+            events={events}
+            date={selectedDate}
+            nations={selectedNations}
+          />
+        </div>
+      </Slide>
+
+      <p>
+        *This website is not affiliated with Uppsalas studentnationer or
+        kuratorskonventet, it is an independent project hoping to temporarly
+        fill the gap. This means that the information shown here might be faulty
+        at times where we have not been able to update the information or find
+        the correct information through the nations channels.
+      </p>
+    </div>
+  );
+};
 
 export default MainPage;
