@@ -7,8 +7,6 @@ import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the def
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
 import Slide from "@mui/material/Slide";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
 
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
 
@@ -22,13 +20,9 @@ const MainPage: React.FC = () => {
     DefaultNationOptions.map((option) => option.value)
   );
   const [slideIn, setSlideIn] = useState(true);
+  const[slideDirection, setSlideDirection] = useState("right" as "right" | "left"| undefined);
 
-  const handleChange = () => {
-    setSlideIn(false);
-    setTimeout(() => {
-      setSlideIn(true);
-    }, 250); // 1000 milliseconds = 1 second
-  };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,8 +67,19 @@ const MainPage: React.FC = () => {
     fetchData();
   }, [selectedCategories, selectedNations]);
 
+  const handleChange = () => {
+    setSlideIn(false);
+    setTimeout(() => {
+      setSlideIn(true);
+    }, 250); // 1000 milliseconds = 1 second
+  };
   const handleDateChange = (date: string) => {
-    if (date !== selectedDate) {
+    if (date !== selectedDate) 
+    {
+      if (date < selectedDate) {
+        setSlideDirection("left");
+      } else if (date > selectedDate){
+        setSlideDirection("right");}
       handleChange();
     }
 
@@ -123,7 +128,7 @@ const MainPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <Slide in={slideIn} direction="right" mountOnEnter>
+      <Slide in={slideIn} direction={slideDirection} mountOnEnter>
         <div>
           <EventsByDate
             categories={selectedCategories}
