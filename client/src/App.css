@@ -9,7 +9,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 2s  ease-in-out;
+    animation: App-logo-spin infinite 2s ease-in-out;
   }
 }
 
@@ -35,4 +35,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.h3.text-center.category-title {
+  font-family: cursive;
 }

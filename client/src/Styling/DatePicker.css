@@ -3,7 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: #f8f9fa;
   border-radius: 5px;
@@ -31,7 +32,7 @@
 }
 
 .date-picker-container button {
-  background-color: #007bff;
+  background-color: #5ca3ef;
   color: white;
   border: none;
   border-radius: 5px;
@@ -41,7 +42,7 @@
 }
 
 .date-picker-container button:hover {
-  background-color: #0056b3;
+  background-color: #4376ae;
 }
 
 @media screen and (max-width: 480px) {

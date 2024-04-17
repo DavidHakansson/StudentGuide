@@ -1,0 +1,31 @@
+html {
+    font-size: 14px;
+    
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background: var(--surface-ground);
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight span {
+    color: black;
+}
+.p-multiselect-select-all-label
+{
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+

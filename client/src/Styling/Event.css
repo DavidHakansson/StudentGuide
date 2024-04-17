@@ -1,11 +1,20 @@
 /* Event.css */
 .card {
-    transition: transform 0.2s; /* Animation for hover effect */
-  }
-  
-  .card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
-  }
-  
+  transition: transform 0.2s; /* Animation for hover effect */
+}
 
-
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+.text-center.category-title {
+  font-size: 2rem;
+  font-weight: 350;
+  line-height: 1.2;
+  text-decoration: semi-bold;
+}
+.category-title {
+  font-size: 2rem;
+  font-weight: 350;
+  line-height: 1.2;
+  text-decoration: semi-bold;
+}
