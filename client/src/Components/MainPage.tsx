@@ -24,15 +24,8 @@ const MainPage: React.FC = () => {
   const [slideDirection, setSlideDirection] = useState(
     "right" as "right" | "left" | undefined
   );
-  interface SheetData {
-    id: string;
-    data: any[]; // Replace 'any[]' with the actual type of your data
-  }
+
   useEffect(() => {
-    console.log(
-      "AAAAAAAAAAAAAAAAAAAAAAAA",
-      process.env.REACT_APP_GOOGLE_API_KEY
-    );
     const getData = async () => {
       try {
         const data = await fetchGoogleSheetsData({
@@ -43,7 +36,7 @@ const MainPage: React.FC = () => {
 
         return data[0];
       } catch (error) {
-        console.error("BBBB", error);
+        console.error(error);
       }
     };
     const fetchData = async () => {
@@ -58,8 +51,6 @@ const MainPage: React.FC = () => {
           .catch((error) => {
             console.error(error);
           });
-
-        console.log("Fetched Data:", data);
         // Sort the data based on category order
         const categoryOrder = [
           "Breakfast",

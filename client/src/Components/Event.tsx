@@ -9,17 +9,20 @@ interface EventProps {
   event: EventObject;
 }
 
-function linkConditional(link:string):any {
-  if(link !== null)
-  {
-    return(<a href={link} className="btn btn-primary btn-sm">Link to Facebook event</a>)
+function linkConditional(link: string): any {
+  if (link !== undefined) {
+    return (
+      <a href={link} className="btn btn-primary btn-sm">
+        Link to Facebook event
+      </a>
+    );
   }
-  return '';
+  return "";
 }
 
 class Event extends Component<EventProps> {
   render() {
-    const { id, title, date, time, nation, link } = this.props.event;
+    const { title, date, time, nation, link } = this.props.event;
 
     const nationImageMap: Record<string, string> = {
       "Stockholms nation": "Stockholm.png",
@@ -54,9 +57,12 @@ class Event extends Component<EventProps> {
               </p>
               <p className="card-text">{nation}</p>
             </div>
-            <div className="card-footer " style={{ border: "none", background: "none"}}>
+            <div
+              className="card-footer "
+              style={{ border: "none", background: "none" }}
+            >
               {linkConditional(link)}
-              </div>
+            </div>
           </div>
         </div>
       </div>
