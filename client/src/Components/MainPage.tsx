@@ -7,6 +7,7 @@ import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the def
 import { DefaultNationOptions } from "./Nations"; // Import the default category options
 import ReactGA from "react-ga4";
 import Slide from "@mui/material/Slide";
+import { fetchGoogleSheetsData } from "google-sheets-mapper";
 
 const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
 
@@ -20,23 +21,36 @@ const MainPage: React.FC = () => {
     DefaultNationOptions.map((option) => option.value)
   );
   const [slideIn, setSlideIn] = useState(true);
-  const[slideDirection, setSlideDirection] = useState("right" as "right" | "left"| undefined);
-
-
+  const [slideDirection, setSlideDirection] = useState(
+    "right" as "right" | "left" | undefined
+  );
 
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchGoogleSheetsData({
+          apiKey: (process.env.REACT_APP_GOOGLE_API_KEY ?? "") || "any-default-local-build_env",
+          sheetId: (process.env.REACT_APP_SHEET_ID ?? "")|| "any-default-local-build_env",
+          sheetsOptions: [{ id: "Blad1" }],
+        });
+
+        return data[0];
+      } catch (error) {
+        console.error(error);
+      }
+    };
     const fetchData = async () => {
       try {
         ReactGA.initialize(TRACKING_ID);
         ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
-
-        const response = await fetch("/SampleData/EventData.json");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-        console.log("Fetched Data:", data);
+        var data: any;
+        await getData()
+          .then((result) => {
+            data = result?.data;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
         // Sort the data based on category order
         const categoryOrder = [
           "Breakfast",
@@ -63,7 +77,6 @@ const MainPage: React.FC = () => {
         console.error("Error during fetch:", error);
       }
     };
-
     fetchData();
   }, [selectedCategories, selectedNations]);
 
@@ -74,17 +87,16 @@ const MainPage: React.FC = () => {
     }, 250); // 1000 milliseconds = 1 second
   };
   const handleDateChange = (date: string) => {
-    if (date !== selectedDate) 
-    {
+    if (date !== selectedDate) {
       if (date < selectedDate) {
         setSlideDirection("left");
-      } else if (date > selectedDate){
-        setSlideDirection("right");}
+      } else if (date > selectedDate) {
+        setSlideDirection("right");
+      }
       handleChange();
     }
 
     setSelectedDate(date);
-    console.log(date);
     ReactGA.event({
       category: "User Interaction",
       action: "Date Change",
