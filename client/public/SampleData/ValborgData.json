@@ -204,7 +204,7 @@
     "time": "12:30",
     "category": "Gasque",
     "nation": "Södermanland-Nerikes nation",
-    "link": null
+    "link": "https://www.facebook.com/events/791077469611946"
   },
   {
     "id": 24,
@@ -247,7 +247,7 @@
     "title": "Champagnelyx",
     "date": "2024-04-30",
     "time": "12:00 - 16:00",
-    "category": "Pub",
+    "category": "Other",
     "nation": "Smålands nation",
     "link": "https://www.facebook.com/events/1381289659180091"
   },
@@ -265,7 +265,7 @@
     "title": "Supermegamimosabrunch - Tema COUNTRY",
     "date": "2024-04-27",
     "time": "12:00 - 18:00",
-    "category": "Pub",
+    "category": "Other",
     "nation": "Göteborgs nation",
     "link": "https://www.facebook.com/events/776711837347094"
   },
@@ -372,10 +372,10 @@
     "id": 42,
     "title": "Sillunch",
     "date": "2024-04-30",
-    "time": "12:30",
+    "time": "11:30",
     "category": "Gasque",
     "nation": "Värmlands nation",
-    "link": null
+    "link": "https://www.facebook.com/events/757966663106417"
   },
   {
     "id": 43,
@@ -451,6 +451,15 @@
   },
   {
     "id": 51,
+    "title": "Live music - Tomas Rimeika & Anton Ånell - at Gotlands' Pub",
+    "date": "2024-04-29",
+    "time": "15:00 - 22:00",
+    "category": "Pub",
+    "nation": "Gotlands nation",
+    "link": "https://www.facebook.com/events/760666432832065"
+  },
+  {
+    "id": 52,
     "title": "Sillunch",
     "date": "2024-04-30",
     "time": "11:00",
@@ -459,7 +468,7 @@
     "link": "https://www.facebook.com/events/793303289364057"
   },
   {
-    "id": 52,
+    "id": 53,
     "title": "Majmiddag",
     "date": "2024-05-01",
     "time": "17:30",
