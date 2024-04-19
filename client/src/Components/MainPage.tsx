@@ -29,8 +29,8 @@ const MainPage: React.FC = () => {
     const getData = async () => {
       try {
         const data = await fetchGoogleSheetsData({
-          apiKey: process.env.REACT_APP_GOOGLE_API_KEY ?? "",
-          sheetId: process.env.REACT_APP_SHEET_ID ?? "",
+          apiKey: (process.env.REACT_APP_GOOGLE_API_KEY ?? "") || "any-default-local-build_env",
+          sheetId: (process.env.REACT_APP_SHEET_ID ?? "")|| "any-default-local-build_env",
           sheetsOptions: [{ id: "Blad1" }],
         });
 
