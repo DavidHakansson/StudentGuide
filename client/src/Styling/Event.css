@@ -1,10 +1,10 @@
 /* Event.css */
 .card {
-  transition: transform 0.2s; /* Animation for hover effect */
+  transition: transform 0.2s; 
 }
 
 .card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  transform: scale(1.05); 
 }
 .text-center.category-title {
   font-size: 2rem;

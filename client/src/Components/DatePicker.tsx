@@ -1,7 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import '../Styling/DatePicker.css'; // Import the CSS
+import '../Styling/DatePicker.css';
 
-// Define the type for the props
 interface DatePickerProps {
   onChange: (date: string) => void;
 }

@@ -56,6 +56,6 @@
 
   .date-picker-container input[type="date"],
   .date-picker-container button {
-      margin: 5px 5px; /* Adjust spacing as needed */
+      margin: 5px 5px; 
   }
 }

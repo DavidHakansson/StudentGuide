@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import EventsByDate from "./EventsByDate"; // Adjust the import path as needed
-import DatePicker from "./DatePicker"; // Import the new DatePicker component
+import EventsByDate from "./EventsByDate"; 
+import DatePicker from "./DatePicker"; 
 import CategoryDropDown from "./CategoryDropDown";
 import NationDropDown from "./NationDropDown";
-import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the default category options
-import { DefaultNationOptions } from "./Nations"; // Import the default category options
+import { DefaultCategoryOptions, EventObject, categoryOrder} from "./Types"; 
+import { DefaultNationOptions } from "./Nations";
 import ReactGA from "react-ga4";
 import Slide from "@mui/material/Slide";
-import { fetchGoogleSheetsData } from "google-sheets-mapper";
+import fetchData from "./utils/fetchData";
 
-const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
+
+const TRACKING_ID = "G-5TL155XBJ9"; 
 
 const MainPage: React.FC = () => {
   const [events, setEvents] = useState<EventObject[]>([]);
@@ -26,58 +27,20 @@ const MainPage: React.FC = () => {
   );
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await fetchGoogleSheetsData({
-          apiKey: (process.env.REACT_APP_GOOGLE_API_KEY ?? "") || "any-default-local-build_env",
-          sheetId: (process.env.REACT_APP_SHEET_ID ?? "")|| "any-default-local-build_env",
-          sheetsOptions: [{ id: "Blad1" }],
-        });
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
 
-        return data[0];
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    const fetchData = async () => {
-      try {
-        ReactGA.initialize(TRACKING_ID);
-        ReactGA.send({ hitType: "pageview", page: "/", title: "Visitor :)" });
-        var data: any;
-        await getData()
-          .then((result) => {
-            data = result?.data;
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-        // Sort the data based on category order
-        const categoryOrder = [
-          "Breakfast",
-          "Brunch",
-          "Lunch",
-          "Fika",
-          "Pub",
-          "Restaurant",
-          "Club",
-          "Gasque",
-          "Sport",
-          "Reception hours",
-          "Other",
-        ];
+    const setSortAndFetchData = async () => {
+      const data = await fetchData("Blad1");      
+      const sortedData = data.sort((a: EventObject, b: EventObject) => {
+        const categoryAIndex = categoryOrder.indexOf(a.category);
+        const categoryBIndex = categoryOrder.indexOf(b.category);
+        return categoryAIndex - categoryBIndex;
+      });
+      setEvents(sortedData);
+      } 
 
-        const sortedData = data.sort((a: EventObject, b: EventObject) => {
-          const categoryAIndex = categoryOrder.indexOf(a.category);
-          const categoryBIndex = categoryOrder.indexOf(b.category);
-          return categoryAIndex - categoryBIndex;
-        });
-
-        setEvents(sortedData);
-      } catch (error) {
-        console.error("Error during fetch:", error);
-      }
-    };
-    fetchData();
+    setSortAndFetchData();
   }, [selectedCategories, selectedNations]);
 
   const handleChange = () => {

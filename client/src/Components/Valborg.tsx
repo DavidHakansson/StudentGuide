@@ -1,43 +1,35 @@
-import React, { Component } from "react";
-import EventsByNation from "./EventsByNation"; // Adjust the import path as needed
+import React, { useState, useEffect } from "react";
+import EventsByNation from "./EventsByNation";
 import NationDropDown from "./NationDropDown";
-import { DefaultNationOptions } from "./Nations"; // Import the default category options
+import { DefaultNationOptions } from "./Nations";
 import ReactGA from "react-ga4";
+import {fetchData} from "./utils/fetchData";
+import { EventObject } from "./Types";
 
-const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
+const TRACKING_ID = "G-5TL155XBJ9"; // YOUR_TRACKING_ID
 
-class Valborg extends React.Component {
-  state = {
-    events: [],
-    selectedNations: DefaultNationOptions.map((option) => option.value), // Default or initial nations
-  };
+const Valborg: React.FC = () => {
+  const [events, setEvents] = useState<EventObject[]>([]);
+  const [selectedNations, setSelectedNations] = useState<string[]>(
+    DefaultNationOptions.map((option) => option.value)
+  );
 
-  componentDidMount() {
+  useEffect(() => {
     ReactGA.initialize(TRACKING_ID);
-    const { selectedNations } = this.state;
     ReactGA.send({
       hitType: "pageview",
       page: "/Valborg",
       title: "Valborg .)",
     });
-    fetch("/SampleData/ValborgData.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        this.handleNationChange(selectedNations); //Load the default nations when the page loads
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({ events: data });
-      })
-      .catch((error) => {
-        console.error("Error during fetch:", error);
-      });
-  }
+    const setAndFetchData = async () => {
+    setEvents(await fetchData("Blad2"));
+    } 
+    setAndFetchData();
+  }, []);
 
-  handleNationChange = (nations: string[]) => {
-    this.setState({ selectedNations: nations });
+
+  const handleNationChange = (nations: string[]) => {
+    setSelectedNations(nations);
     ReactGA.event({
       category: "User Interaction",
       action: "Nation Change",
@@ -45,30 +37,25 @@ class Valborg extends React.Component {
     });
   };
 
-  render() {
-    const { events, selectedNations } = this.state;
-
-    return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 d-md-flex mb-3 mt-2">
-              <NationDropDown onChange={this.handleNationChange} />
-            </div>
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 d-md-flex mb-3 mt-2">
+            <NationDropDown onChange={handleNationChange} />
           </div>
         </div>
-
-        <EventsByNation events={events} nations={selectedNations} />
-        <p>
-          *This website is not affiliated with Uppsalas studentnationer or
-          kuratorskonventet, it is an independent project hoping to temporarly
-          fill the gap. This means that the information shown here might be
-          faulty at times where we have not been able to update the information
-          or find the correct information through the nations channels.
-        </p>
       </div>
-    );
-  }
-}
+      <EventsByNation events={events} nations={selectedNations} />
+      <p>
+        *This website is not affiliated with Uppsalas studentnationer or
+        kuratorskonventet, it is an independent project hoping to temporarly
+        fill the gap. This means that the information shown here might be
+        faulty at times where we have not been able to update the information
+        or find the correct information through the nations channels.
+      </p>
+    </div>
+  );
+};
 
 export default Valborg;

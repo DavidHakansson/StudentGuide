@@ -1,10 +1,7 @@
 
-import React, { useState, useEffect, ChangeEvent } from 'react';
-//import EmojiIcon from '@atlaskit/icon/glyph/emoji';
-import Select, { components, DropdownIndicatorProps } from 'react-select';
-//import { ColourOption, colourOptions } from '../data';
-import { EventCategoryOption, EventCategoryOptions, DefaultCategoryOptions, AllCategoryOptions } from './Types';
-import "../Styling/CategoryDropDown.css";
+import React, { useState, useEffect} from 'react';
+import {DefaultCategoryOptions, AllCategoryOptions } from './Types';
+import "../Styling/DropDown.css";
 import "primereact/resources/themes/bootstrap4-light-blue/theme.css"; // Assuming Bootstrap 4 theme for PrimeReact
 import "primereact/resources/primereact.min.css"; // Core CSS
 
