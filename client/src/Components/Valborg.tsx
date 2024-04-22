@@ -21,7 +21,6 @@ const Valborg: React.FC = () => {
       page: "/Valborg",
       title: "Valborg .)",
     });
-
     const setAndFetchData = async () => {
     setEvents(await fetchData("Blad2"));
     } 
