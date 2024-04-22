@@ -138,14 +138,13 @@ const MainPage: React.FC = () => {
           />
         </div>
       </Slide>
-
-      <p>
-        *This website is not affiliated with Uppsalas studentnationer or
-        kuratorskonventet, it is an independent project hoping to temporarly
-        fill the gap. This means that the information shown here might be faulty
-        at times where we have not been able to update the information or find
-        the correct information through the nations channels.
-      </p>
+<p>
+  *This website is not affiliated with Uppsalas studentnationer or
+  <a href="https://www.kuratorskonventet.se/">kuratorskonventet</a>, it is an independent project hoping to temporarily
+  fill the gap. This means that the information shown here might be faulty
+  at times where we have not been able to update the information or find
+  the correct information through the nation's channels.
+</p>
     </div>
   );
 };
