@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const headerStyle = {
-  color: 'black', // Example style for the Navbar.Brand
-  // Add more styles as needed
-};
-
 const NavigationBar = () => {
   const [expanded, setExpanded] = useState(false);
 

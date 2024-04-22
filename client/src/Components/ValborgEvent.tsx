@@ -1,21 +1,11 @@
 // ValborgEvent Component
-import React, { Component } from "react";
+import { Component } from "react";
 import "../Styling/Event.css";
 import { EventObject } from "./Types";
-import { Card } from "react-bootstrap";
+import linkConditional from "./utils/linkConditional";
 
 interface EventProps {
   event: EventObject;
-}
-function linkConditional(link: string): any {
-  if (link !== undefined && link !== "") {
-    return (
-      <a href={link} className="btn btn-primary btn-sm">
-        Link to Facebook event
-      </a>
-    );
-  }
-  return "";
 }
 
 function emojiConditional(category: string): any {

@@ -3,7 +3,7 @@ import EventsByNation from "./EventsByNation";
 import NationDropDown from "./NationDropDown";
 import { DefaultNationOptions } from "./Nations";
 import ReactGA from "react-ga4";
-import {getData, fetchData} from "./utils/fetchData";
+import {fetchData} from "./utils/fetchData";
 import { EventObject } from "./Types";
 
 const TRACKING_ID = "G-5TL155XBJ9"; // YOUR_TRACKING_ID
@@ -21,7 +21,7 @@ const Valborg: React.FC = () => {
       page: "/Valborg",
       title: "Valborg .)",
     });
-    
+
     const setAndFetchData = async () => {
     setEvents(await fetchData("Blad2"));
     } 

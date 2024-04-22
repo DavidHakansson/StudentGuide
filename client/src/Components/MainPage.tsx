@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import EventsByDate from "./EventsByDate"; // Adjust the import path as needed
-import DatePicker from "./DatePicker"; // Import the new DatePicker component
+import EventsByDate from "./EventsByDate"; 
+import DatePicker from "./DatePicker"; 
 import CategoryDropDown from "./CategoryDropDown";
 import NationDropDown from "./NationDropDown";
-import { DefaultCategoryOptions, EventObject } from "./Types"; // Import the default category options
-import { DefaultNationOptions } from "./Nations"; // Import the default category options
+import { DefaultCategoryOptions, EventObject, categoryOrder} from "./Types"; 
+import { DefaultNationOptions } from "./Nations";
 import ReactGA from "react-ga4";
 import Slide from "@mui/material/Slide";
 import fetchData from "./utils/fetchData";
-import {categoryOrder} from "./Types"
 
 
-const TRACKING_ID = "G-5TL155XBJ9"; // OUR_TRACKING_ID
+const TRACKING_ID = "G-5TL155XBJ9"; 
 
 const MainPage: React.FC = () => {
   const [events, setEvents] = useState<EventObject[]>([]);
