@@ -37,6 +37,20 @@ export const DefaultCategoryOptions = [
   EventCategoryOptions[6],
 ]; // Club
 
+export const categoryOrder = [
+  "Breakfast",
+  "Brunch",
+  "Lunch",
+  "Fika",
+  "Pub",
+  "Restaurant",
+  "Club",
+  "Gasque",
+  "Sport",
+  "Reception hours",
+  "Other",
+];
+
 export const AllCategoryOptions = [
   EventCategoryOptions[0], // Breakfast
   EventCategoryOptions[1], // brunch

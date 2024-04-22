@@ -8,7 +8,7 @@ interface EventProps {
   event: EventObject;
 }
 function linkConditional(link: string): any {
-  if (link !== null) {
+  if (link !== undefined && link !== "") {
     return (
       <a href={link} className="btn btn-primary btn-sm">
         Link to Facebook event

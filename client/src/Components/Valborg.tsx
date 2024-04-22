@@ -3,12 +3,13 @@ import EventsByNation from "./EventsByNation";
 import NationDropDown from "./NationDropDown";
 import { DefaultNationOptions } from "./Nations";
 import ReactGA from "react-ga4";
-import { fetchGoogleSheetsData } from "google-sheets-mapper";
+import {getData, fetchData} from "./utils/fetchData";
+import { EventObject } from "./Types";
 
 const TRACKING_ID = "G-5TL155XBJ9"; // YOUR_TRACKING_ID
 
 const Valborg: React.FC = () => {
-  const [events, setEvents] = useState<any[]>([]);
+  const [events, setEvents] = useState<EventObject[]>([]);
   const [selectedNations, setSelectedNations] = useState<string[]>(
     DefaultNationOptions.map((option) => option.value)
   );
@@ -21,36 +22,10 @@ const Valborg: React.FC = () => {
       title: "Valborg .)",
     });
     
-    const getData = async () => {
-      try {
-        const data = await fetchGoogleSheetsData({
-          apiKey: (process.env.REACT_APP_GOOGLE_API_KEY ?? "") || "any-default-local-build_env",
-          sheetId: (process.env.REACT_APP_SHEET_ID ?? "")|| "any-default-local-build_env",
-          sheetsOptions: [{ id: "Blad2" }],
-        });
-
-        return data[0];
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    const fetchData = async () => {
-      try {
-        var data: any;
-        await getData()
-          .then((result) => {
-            data = result?.data;
-            setEvents(data);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-        // Sort the data based on category order
-      } catch (error) {
-        console.error("Error during fetch:", error);
-      }
-    };
-    fetchData();
+    const setAndFetchData = async () => {
+    setEvents(await fetchData("Blad2"));
+    } 
+    setAndFetchData();
   }, []);
 
 
