@@ -23,7 +23,7 @@ const MainPage: React.FC = () => {
   );
   const [slideIn, setSlideIn] = useState(true);
   const [slideDirection, setSlideDirection] = useState(
-    "right" as "right" | "left" | undefined
+    "right" as "right" | "left" 
   );
 
   useEffect(() => {
@@ -43,10 +43,15 @@ const MainPage: React.FC = () => {
     setSortAndFetchData();
   }, [selectedCategories, selectedNations]);
 
-  const handleChange = () => {
+  const handleChange = (date: string) => {
     setSlideIn(false);
     setTimeout(() => {
       setSlideIn(true);
+      if (date > selectedDate) {
+        setSlideDirection("left");
+      } else if (date < selectedDate) {
+        setSlideDirection("right");
+      }
     }, 250); // 1000 milliseconds = 1 second
   };
   const handleDateChange = (date: string) => {
@@ -56,7 +61,7 @@ const MainPage: React.FC = () => {
       } else if (date > selectedDate) {
         setSlideDirection("right");
       }
-      handleChange();
+      handleChange(date);
     }
 
     setSelectedDate(date);
